@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 7%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 7%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 7%;
+    
+    --primary: 0 0% 7%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 7%;
+    
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 7%;
+    
+    --destructive: 358 100% 41%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 7%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 100%;
+    
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 100%;
+    
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 100%;
+    
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 7%;
+    
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 63%;
+    
+    --accent: 0 0% 14%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 358 100% 41%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 100%;
+  }
+
+  html {
+    color-scheme: light;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-[#FAFAFA] text-ink font-sans antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight;
+  }
+}
+
+/* Typography styles */
+.display-title {
+  font-family: var(--font-display), "Bebas Neue", sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.display-number {
+  font-family: var(--font-display), "Bebas Neue", sans-serif;
+  letter-spacing: 0.02em;
+}
+
+/* Micro-animations */
+.btn-press-active:active {
+  transform: scale(0.97);
+  transition: transform 0.1s ease;
+}
+
+/* Scrollbar Utils */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Safe area padding for mobile navigation */
+.safe-area-pb {
+  padding-bottom: env(safe-area-inset-bottom, 12px);
+}
